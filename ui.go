@@ -9,6 +9,7 @@ import (
 	fynewidget    "fyne.io/fyne/v2/widget"
 
 	"github.com/reiver/nextsocial-app/icons"
+	"github.com/reiver/nextsocial-app/pages"
 )
 
 type UI struct {
@@ -30,20 +31,12 @@ func (receiver *UI) Init() {
 		return
 	}
 
-	receiver.pageAccount       = fynewidget.NewLabel("NextSocial 💬 Account")
-	receiver.pageHome          = fynewidget.NewLabel("NextSocial 💬 Home")
-	receiver.pageMenu          = fynewidget.NewLabel("NextSocial 💬 Menu")
-	receiver.pageNew           = fynewidget.NewLabel("NextSocial 💬 New")
-	receiver.pageNotifications = fynewidget.NewLabel("NextSocial 💬 Notifications")
-	receiver.pageSearch        = func() fyne.CanvasObject {
-		var input *fynewidget.Entry = fynewidget.NewEntry()
-		input.SetPlaceHolder("search...")
-		input.OnSubmitted = func(str string){
-			fmt.Println("searching:", input.Text)
-		}
-
-		return input
-	}()
+	receiver.pageAccount       = pages.Account()
+	receiver.pageHome          = pages.Home()
+	receiver.pageMenu          = pages.Menu()
+	receiver.pageNew           = pages.New()
+	receiver.pageNotifications = pages.Notifications()
+	receiver.pageSearch        = pages.Search()
 
 	var content *fyne.Container
 	{
