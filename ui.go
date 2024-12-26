@@ -42,8 +42,6 @@ func (receiver *UI) Init() {
 			fmt.Println("searching:", input.Text)
 		}
 
-		receiver.ShowPageSearch()
-
 		return input
 	}()
 
