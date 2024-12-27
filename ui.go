@@ -64,21 +64,25 @@ func (receiver *UI) Init() {
 	receiver.container = content
 }
 
-func (receiver *UI) show(canvasObject fyne.CanvasObject) {
+func (receiver *UI) showPage(canvasObject fyne.CanvasObject) {
 	if nil == receiver {
+		fmt.Fprintln(os.Stderr, "[show-page] nil receiver")
 		return
 	}
 
 	if nil == canvasObject {
+		fmt.Fprintln(os.Stderr, "[show-page] nil fyne canvas-object")
 		return
 	}
 
 	container := receiver.container
 	if nil == container {
+		fmt.Fprintln(os.Stderr, "[show-page] nil fyne container")
 		return
 	}
 
 	if len(container.Objects) <= 0 {
+		fmt.Fprintln(os.Stderr, "[show-page] no fyne container objects")
 		return
 	}
 
@@ -87,35 +91,30 @@ func (receiver *UI) show(canvasObject fyne.CanvasObject) {
 
 func (receiver *UI) ShowPageAccount() {
 	fmt.Println("show page 'account'")
-	receiver.show(receiver.pageAccount)
+	receiver.showPage(receiver.pageAccount)
 }
 
 func (receiver *UI) ShowPageHome() {
 	fmt.Println("show page 'home'")
-	receiver.show(receiver.pageHome)
+	receiver.showPage(receiver.pageHome)
 }
 
 func (receiver *UI) ShowPageMenu() {
 	fmt.Println("show page 'menu'")
-	receiver.show(receiver.pageMenu)
+	receiver.showPage(receiver.pageMenu)
 }
 
 func (receiver *UI) ShowPageNew() {
 	fmt.Println("show page 'new'")
-	receiver.show(receiver.pageNew)
-}
-
-func (receiver *UI) ShowPageProfile() {
-	fmt.Println("show page 'profile'")
-	receiver.show(receiver.pageProfile)
+	receiver.showPage(receiver.pageNew)
 }
 
 func (receiver *UI) ShowPageNotifications() {
 	fmt.Println("show page 'notifications'")
-	receiver.show(receiver.pageNotifications)
+	receiver.showPage(receiver.pageNotifications)
 }
 
 func (receiver *UI) ShowPageSearch() {
 	fmt.Println("show page 'search'")
-	receiver.show(receiver.pageSearch)
+	receiver.showPage(receiver.pageSearch)
 }
