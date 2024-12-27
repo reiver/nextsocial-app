@@ -1,4 +1,4 @@
-package pages
+package searchpage
 
 import (
 	"fmt"
@@ -8,7 +8,7 @@ import (
 	fynewidget    "fyne.io/fyne/v2/widget"
 )
 
-func Profile() fyne.CanvasObject {
+func newProfile() fyne.CanvasObject {
 
 	var richtext *fynewidget.RichText
 	{

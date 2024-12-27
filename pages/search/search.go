@@ -33,13 +33,32 @@ func (receiver *Search) CreateRenderer() fyne.WidgetRenderer {
 		Italic:true,
 	}
 
+	var containerptr **fyne.Container
+
 	var input *fynewidget.Entry = fynewidget.NewEntry()
 	input.SetPlaceHolder("search...")
-	input.OnSubmitted = func(str string){
+	searchFunc := func(str string){
 		fmt.Println("searching:", input.Text)
+
+		if nil == containerptr {
+			return
+		}
+
+		cntnr := *containerptr
+		if nil == cntnr {
+			return
+		}
+
+		if len(cntnr.Objects) <= 0 {
+			return
+		}
+
+		cntnr.Objects[0] = newProfile()
 	}
+	input.OnSubmitted = searchFunc
 
 	var container *fyne.Container = fynecontainer.NewBorder(nil, input, nil, nil, label)
+	containerptr = &container
 	var canvasObject fyne.CanvasObject = container
 
 	return fynewidget.NewSimpleRenderer(canvasObject)
