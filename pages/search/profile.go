@@ -8,12 +8,11 @@ import (
 	fynewidget    "fyne.io/fyne/v2/widget"
 )
 
-func newProfile() fyne.CanvasObject {
+func newProfile(handle string) fyne.CanvasObject {
 
 	var richtext *fynewidget.RichText
 	{
 		const name string = "Joe Blow"
-		const handle string = "@joe123"
 		const summary string = "I like to eat, eat, eat, apples and bananas."
 
 		var markdown string = fmt.Sprintf("# %s (%s)\n\n%s\n", name, handle, summary)
