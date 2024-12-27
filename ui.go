@@ -56,7 +56,6 @@ func (receiver *UI) Init() {
 			fynewidget.NewToolbarAction(fynetheme.DocumentCreateIcon(), receiver.ShowPageNew),
 		)
 
-
 		content = fynecontainer.NewBorder(nil, toolbar, nil, nil, label)
 	}
 
@@ -85,31 +84,31 @@ func (receiver *UI) show(canvasObject fyne.CanvasObject) {
 }
 
 func (receiver *UI) ShowPageAccount() {
-	fmt.Println("account-button activated")
+	fmt.Println("show page 'account'")
 	receiver.show(receiver.pageAccount)
 }
 
 func (receiver *UI) ShowPageHome() {
-	fmt.Println("home-button activated")
+	fmt.Println("show page 'home'")
 	receiver.show(receiver.pageHome)
 }
 
 func (receiver *UI) ShowPageMenu() {
-	fmt.Println("menu-button activated")
+	fmt.Println("show page 'menu'")
 	receiver.show(receiver.pageMenu)
 }
 
 func (receiver *UI) ShowPageNew() {
-	fmt.Println("new-button activated")
+	fmt.Println("show page 'new'")
 	receiver.show(receiver.pageNew)
 }
 
 func (receiver *UI) ShowPageNotifications() {
-	fmt.Println("notifications-button activated")
+	fmt.Println("show page 'notifications'")
 	receiver.show(receiver.pageNotifications)
 }
 
 func (receiver *UI) ShowPageSearch() {
-	fmt.Println("search-button activated")
+	fmt.Println("show page 'search'")
 	receiver.show(receiver.pageSearch)
 }
