@@ -6,15 +6,15 @@ import (
 )
 
 func Account() fyne.Resource {
-	return safeFyneIconLookup(fynetheme.IconNameAccount)
+	return fynetheme.AccountIcon()
 }
 
 func Home() fyne.Resource {
-	return safeFyneIconLookup(fynetheme.IconNameHome)
+	return fynetheme.HomeIcon()
 }
 
 func Menu() fyne.Resource {
-	return safeFyneIconLookup(fynetheme.IconNameMenu)
+	return fynetheme.MenuIcon()
 }
 
 func Notifications() fyne.Resource {
