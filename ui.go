@@ -19,6 +19,7 @@ type UI struct {
 	pageMenu          fyne.CanvasObject
 	pageNew           fyne.CanvasObject
 	pageNotifications fyne.CanvasObject
+	pageProfile       fyne.CanvasObject
 	pageSearch        fyne.CanvasObject
 }
 
@@ -36,7 +37,8 @@ func (receiver *UI) Init() {
 	receiver.pageMenu          = pages.Menu()
 	receiver.pageNew           = pages.New()
 	receiver.pageNotifications = pages.Notifications()
-	receiver.pageSearch        = pages.Search()
+	receiver.pageProfile       = pages.Profile()
+	receiver.pageSearch        = pages.Search(receiver.ShowPageProfile)
 
 	var content *fyne.Container
 	{
@@ -101,6 +103,11 @@ func (receiver *UI) ShowPageMenu() {
 func (receiver *UI) ShowPageNew() {
 	fmt.Println("show page 'new'")
 	receiver.show(receiver.pageNew)
+}
+
+func (receiver *UI) ShowPageProfile() {
+	fmt.Println("show page 'profile'")
+	receiver.show(receiver.pageProfile)
 }
 
 func (receiver *UI) ShowPageNotifications() {
