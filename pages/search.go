@@ -4,7 +4,7 @@ import (
 	"fmt"
 
 	"fyne.io/fyne/v2"
-	fynewidget    "fyne.io/fyne/v2/widget"
+	fynewidget "fyne.io/fyne/v2/widget"
 )
 
 func Search() fyne.CanvasObject {
